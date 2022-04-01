@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <h1>Table Operation</h1>
+        <article class="tableInput">
+            <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+                <div class="input">
+                    <div class="fields">
+                        <label for="name"><b>Name <sup>*</sup></b> </label>
+                        <div><input type="text" id="name" name="name" placeholder="Name"></div>
+                    </div>
+                    <div class="fields">
+                        <label for="age"><b>Age</b></label>
+                        <div><input type="number" id="age" name="age" placeholder="Age"></div>
+                    </div>
+                    <div class="fields">
+                        <label for="mobile"><b>Mobile Number <sup>*</sup></b></label>
+                        <div><input type="tel" id="mobile" name="mobile" placeholder="Number"></div>
+                    </div>
+                </div>
+                <div class="submitBtn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </article>
+        
+        <article class="displayTable">
+            <div class="table">
+                <div class="searchBox">
+                    <label for="">Search: </label>
+                <input type="text" id="searchInput" placeholder="Search for Name" onkeyup="searchData()">
+                <!-- <button >Sort</button> -->
+                </div>
+                <table class="list" id="list">
+                    <thead>
+                        <tr>
+                            <th onClick="sortTable(0)">Name </th>
+                            <th onClick="sortTable(1)">Age</th>
+                            <th onClick="sortTable(2)">Mobile Number</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                        <tbody id="tableBody">
+                        <!-- <tr>
+                            <td>Shivansh</td>
+                            <td>22</td>
+                            <td>7710352296</td>
+                        </tr>
+                        <tr>
+                            <td>Sunny</td>
+                            <td>32</td>
+                            <td>9878346382</td>
+                        </tr>
+                        <tr>
+                            <td>Vijay</td>
+                            <td>12</td>
+                            <td>9876543216</td>
+                        </tr>
+                        <tr>
+                            <td>Avi</td>
+                            <td>42</td>
+                            <td>7896547832</td>
+                        </tr>
+                        <tr>
+                            <td>Kartik</td>
+                            <td>27</td>
+                            <td>9809806543</td>
+                        </tr>
+                        <tr>
+                            <td>Bhavik</td>
+                            <td>29</td>
+                            <td>9876500881</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- <button onclick="pagination()">Pagination</button> -->
+        </article>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

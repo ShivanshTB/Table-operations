@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+section{
+    margin: 4px 4px;
+    padding: 4px 4px;
+}
+.tableInput{
+    margin-top: 2%;
+    background-color: rgb(243, 210, 233);
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+section h1{
+    text-align: center;
+    font-size: 3vw;
+}
+section .input{
+    display: flex;
+    justify-content: center;
+}
+section .input div {
+margin: 3% 4%;
+}
+label{
+    margin-left: 4%;
+font-size: 1.5vw;
+}
+.input input{
+    border: none;
+    outline: none;
+    width: 20vw;
+    height: 2vw;
+    border-bottom: 2px solid rgb(95, 94, 94);
+    font-size: 1.3vw;
+}
+.submitBtn{
+   margin-left: 48%;
+}
+button{
+    border: none;
+    background-color: rgb(122, 123, 124);
+    color: aliceblue;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px rgb(140, 140, 141);
+    /* outline: none; */
+    width: 7vw;
+    height: 2.7vw;
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+button:hover{
+    background-color: rgb(35, 94, 182);
+    box-shadow: 2px 2px 5px rgb(104, 104, 104);
+}
+.displayTable{
+    margin: 3% 2%;
+}
+.displayTable .table{
+    margin: auto;
+    width: 60%;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid;
+    padding: 7px ;
+}
+th{
+    cursor: pointer;
+}
+table tr{
+      /* width: 100%; */
+      text-align: center;
+      
+  }
+  a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #0c0c0c;
+    margin-right: 4px;
+    background-color: rgb(185, 142, 226);
+    padding: 5px 6px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgb(140, 140, 141);
+  }
+  sup,.error{
+      color: red;;
+      font-size: small;
+  }
+  .error{
+    display: none;
+  }
+.searchBox{
+    margin: 1% 2%;
+}
+.searchBox input{
+    height: 1.7vw;
+    width: 13vw;
+    font-size: 1.2vw;
+}
