@@ -1,28 +1,3 @@
-//form validation
-const name = document.getElementById("name");
-const mobile = document.getElementById("mobile");
-let validName = false;
-let validMobile = false;
-name.addEventListener("blur", () => {
-  let validation = /^[a-zA-Z]([\sa-zA-Z]){2,40}$/;
-  let str = name.value;
-  if (validation.test(str)) {
-    validName = true;
-  } else {
-    alert("Please enter a valid name.");
-    validName = false;
-  }
-});
-mobile.addEventListener("blur", () => {
-  let validation = /^([0-9]){10}$/;
-  let str = mobile.value;
-  if (validation.test(str)) {
-    validMobile = true;
-  } else {
-    alert("Mobile number should be of 10 digits.");
-    validMobile = false;
-  }
-});
 
 //add,delete,edit,update operations
 
@@ -37,8 +12,8 @@ let onFormSubmit = () => {
   }
 };
 // read
+var formData = [];
 let readFormData = () => {
-  var formData = {};
   formData["name"] = document.getElementById("name").value;
   formData["age"] = document.getElementById("age").value;
   formData["mobile"] = document.getElementById("mobile").value;
@@ -56,6 +31,7 @@ let insertNewRecord = (data) => {
   var table = document.getElementById("list");
   // console.log(table);
   var newRow = table.insertRow(table.length);
+  // console.log(newRow)
   var cell1 = newRow.insertCell(0);
   cell1.innerText = data.name;
   var cell2 = newRow.insertCell(1);
@@ -82,11 +58,37 @@ let onEdit = (td) => {
 };
 //update
 function updateRecord(formData) {
-  rowSelected.cells[0].innerHTML = formData.name;
-  rowSelected.cells[1].innerHTML = formData.age;
-  rowSelected.cells[2].innerHTML = formData.mobile;
+  rowSelected.cells[0].innerText = formData.name;
+  rowSelected.cells[1].innerText = formData.age;
+  rowSelected.cells[2].innerText = formData.mobile;
   // console.log(formData);
 }
+
+//form validation
+const name = document.getElementById("name");
+const mobile = document.getElementById("mobile");
+let validName = false;
+let validMobile = false;
+name.addEventListener("blur", () => {
+  let validation = /^[a-zA-Z]([\sa-zA-Z]){2,40}$/;
+  let str = name.value;
+  if (validation.test(str)) {
+    validName = true;
+  } else {
+    alert("Please enter a valid name.");
+    validName = false;
+  }
+});
+mobile.addEventListener("blur", () => {
+  let validation = /^([0-9]){10}$/;
+  let str = mobile.value;
+  if (validation.test(str)) {
+    validMobile = true;
+  } else {
+    alert("Mobile number should be of 10 digits.");
+    validMobile = false;
+  }
+});
 
 //search box
 let searchData = () => {
@@ -110,7 +112,11 @@ let searchData = () => {
 //sorting
 // ascending || descending
 function sortTable(n) {
-  var table,i,compare1,compare2,count = 0;
+  var table,
+    i,
+    compare1,
+    compare2,
+    count = 0;
   table = document.getElementById("list");
   // console.log(table);
   var switching = true;
@@ -123,12 +129,16 @@ function sortTable(n) {
       compare1 = rows[i].getElementsByTagName("td")[n];
       compare2 = rows[i + 1].getElementsByTagName("td")[n];
       if (direction == "ascending") {
-        if (compare1.innerHTML.toLowerCase() > compare2.innerHTML.toLowerCase()) {
+        if (
+          compare1.innerHTML.toLowerCase() > compare2.innerHTML.toLowerCase()
+        ) {
           Switch = true;
           break;
         }
       } else if (direction == "descending") {
-        if (compare1.innerHTML.toLowerCase() < compare2.innerHTML.toLowerCase()) {
+        if (
+          compare1.innerHTML.toLowerCase() < compare2.innerHTML.toLowerCase()
+        ) {
           Switch = true;
           break;
         }
@@ -138,31 +148,12 @@ function sortTable(n) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
       count++;
-    }else{
-      if(count==0 && direction == "ascending"){
+    } else {
+      if (count == 0 && direction == "ascending") {
         direction = "descending";
         switching = true;
       }
     }
   }
 }
-
- //pagination
-
-// var rowPerPage = 3;
-// function pagination(){
-//   var pageRow = document.getElementById("tableBody").rows.length;
-//   console.log(pageRow);
-//   var displayPage = Math.round(pageRow / rowPerPage);
-//   console.log(displayPage);
-//   var table = document.getElementById("tableBody");
-//   var row = table.rows
-//   var x,y;
-//  for(let i=1;i<=displayPage;i++){
-//   x = row[i].getElementsByTagName ("td");
-
-//    console.log(x)
-//  }
-// }
-
 
